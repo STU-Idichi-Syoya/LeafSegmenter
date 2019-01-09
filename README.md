@@ -25,7 +25,7 @@ Peyman.Moghadam@data61.csiro.au
 # Attribution / Citation / Sources
 To attribute this model, please include the following citations:
 ## Synthetic data
-For more information about the synthetic see: https://research.csiro.au/robotics/our-work/databases/synthetic-arabidopsis-dataset/
+For more information about the synthetic data see: https://research.csiro.au/robotics/our-work/databases/synthetic-arabidopsis-dataset/
 ```
 Ward, Daniel; Moghadam, Peyman (2018): Synthetic Arabidopsis Dataset. v3. CSIRO. Data Collection. https://doi.org/10.25919/5b68e64547015
 ```
