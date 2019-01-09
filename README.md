@@ -1,5 +1,6 @@
 # Leaf Segmenter and Counter
-This script runs leaf segmentation using the Matterport Mask RCNN framework with supplied weights.
+
+This script, segmenter.py, runs leaf segmentation using the Matterport Mask RCNN framework. Weights for a model trained on synthetic plant images can be downloaded from https://doi.org/10.25919/5b68e64547015.
 
 # Setup
 1. Create a virtual environment: ```python3 -m venv env```
