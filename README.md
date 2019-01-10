@@ -1,6 +1,8 @@
 # Leaf Segmenter and Counter
 
-This script, segmenter.py, runs leaf segmentation using the Matterport Mask RCNN framework. Weights for a model trained on synthetic plant images can be downloaded from https://doi.org/10.25919/5b68e64547015.
+This package provides an implementation of leaf segmentation to accompany the paper 'Deep Leaf Segmentation Using Synthetic Data'.
+
+It uses the Matterport Mask RCNN framework. Weights for a model trained on synthetic plant images and the images themselves can be downloaded from https://doi.org/10.25919/5b68e64547015.
 
 # Setup
 1. Create a virtual environment: ```python3 -m venv env```
@@ -28,7 +30,7 @@ To attribute this model, please include the following citations:
 ## Synthetic data
 For more information about the synthetic data see: https://research.csiro.au/robotics/our-work/databases/synthetic-arabidopsis-dataset/
 ```
-Ward, Daniel; Moghadam, Peyman (2018): Synthetic Arabidopsis Dataset. v3. CSIRO. Data Collection. https://doi.org/10.25919/5b68e64547015
+Ward, Daniel; Moghadam, Peyman (2018): Synthetic Arabidopsis Dataset. v4. CSIRO. Data Collection. https://doi.org/10.25919/5b68e64547015
 ```
 
 ## Paper
