@@ -2,7 +2,7 @@
 
 This package provides an implementation of leaf segmentation to accompany the paper 'Deep Leaf Segmentation Using Synthetic Data'.
 
-It uses the Matterport Mask RCNN framework. Weights for a model trained on synthetic plant images (h5 file) and the images themselves (tar file) can be downloaded from https://doi.org/10.25919/5b68e64547015.
+It uses the Matterport Mask RCNN framework. Weights for a model trained on synthetic plant images (h5 file) and the images themselves (tar file) can be downloaded from https://doi.org/10.25919/5c36957c0af41.
 
 # Setup
 1. Create a virtual environment: ```python3 -m venv env```
@@ -16,7 +16,7 @@ It uses the Matterport Mask RCNN framework. Weights for a model trained on synth
 
 # Run the segmentation
 The script has a simple command line interface. Use ```--help``` for information about parameters. It will output leaf segmentations and a csv file containing the predicted count for each image.
-1. ```python3 segmenter.py --dataPattern '/path/to/data/*.png' --outputDir /path/to/save/output --weightsPath /path/to/weights/mask_rcnn_cvppp_0002.h5 --verboseDetection --useCPU```
+1. ```python3 segmenter.py --dataPattern '/path/to/data/*.png' --outputDir /path/to/save/output --weightsPath /path/to/weights/leafSegmenter0005.h5 --verboseDetection --useCPU```
 
 # Compatibility
 This framework has been tested on Ubuntu 16.04.
@@ -30,7 +30,8 @@ To attribute this model, please include the following citations:
 ## Synthetic data
 For more information about the synthetic data see: https://research.csiro.au/robotics/our-work/databases/synthetic-arabidopsis-dataset/
 ```
-Ward, Daniel; Moghadam, Peyman (2018): Synthetic Arabidopsis Dataset. v4. CSIRO. Data Collection. https://doi.org/10.25919/5b68e64547015
+Ward, Daniel; Moghadam, Peyman (2018): Synthetic Arabidopsis Dataset. v4. CSIRO. Data Collection. 
+https://doi.org/10.25919/5c36957c0af41
 ```
 
 ## Paper
