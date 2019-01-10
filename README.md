@@ -2,7 +2,7 @@
 
 This package provides an implementation of leaf segmentation to accompany the paper 'Deep Leaf Segmentation Using Synthetic Data'.
 
-It uses the Matterport Mask RCNN framework. Weights for a model trained on synthetic plant images and the images themselves can be downloaded from https://doi.org/10.25919/5b68e64547015.
+It uses the Matterport Mask RCNN framework. Weights for a model trained on synthetic plant images (h5 file) and the images themselves (tar file) can be downloaded from https://doi.org/10.25919/5b68e64547015.
 
 # Setup
 1. Create a virtual environment: ```python3 -m venv env```
