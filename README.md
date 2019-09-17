@@ -1,10 +1,16 @@
 # Leaf Segmenter and Counter
+This package contains information, datasets and code for image-based plant phenotyping tasks. Synthetic datasets and the pretrained leaf instance segmentation models can be downloaded below.
+
+# UPGen: a Universal Plant Generator for bridging the species gap
+The dataset, pretrained model and supporting code for the paper, 'UPGen: a Universal Plant Generator for bridging the species gap', will be published upon paper acceptance.
+
+# Deep Leaf Segmentation Using Synthetic data
 
 This package provides an implementation of leaf segmentation to accompany the paper 'Deep Leaf Segmentation Using Synthetic Data'.
 
 It uses the Matterport Mask RCNN framework. Weights for a model trained on synthetic plant images (h5 file) and the images themselves (tar file) can be downloaded from https://doi.org/10.25919/5c36957c0af41.
 
-# Setup
+## Setup
 1. Create a virtual environment: ```python3 -m venv env```
 2. Activate the environment: ```source env/bin/activate```
 3. Install wheel: ```pip3 install wheel```
@@ -14,41 +20,42 @@ It uses the Matterport Mask RCNN framework. Weights for a model trained on synth
 10. Install dependencies: ```pip3 install -r requirements.txt```
 11. Add Mask_RCNN to the PYTHON PATH: ```export PYTHONPATH=$PYTHONPATH:/path/to/Mask_RCNN```
 
-# Run the segmentation
+## Run the segmentation
 The script has a simple command line interface. Use ```--help``` for information about parameters. It will output leaf segmentations and a csv file containing the predicted count for each image.
 1. ```python3 segmenter.py --dataPattern '/path/to/data/*.png' --outputDir /path/to/save/output --weightsPath /path/to/weights/leafSegmenter0005.h5 --verboseDetection --useCPU```
 
-# Compatibility
+## Compatibility
 This framework has been tested on Ubuntu 16.04.
 
-# Contact Information
+## Contact Information
 Peyman Moghadam
 Peyman.Moghadam@data61.csiro.au
 
-# Attribution / Citation / Sources
+## Attribution / Citation / Sources
 To attribute this model, please include the following citations:
-## Synthetic data
+### Synthetic data
 For more information about the synthetic data see: https://research.csiro.au/robotics/our-work/databases/synthetic-arabidopsis-dataset/
 ```
 Ward, Daniel; Moghadam, Peyman (2018): Synthetic Arabidopsis Dataset. v4. CSIRO. Data Collection. 
 https://doi.org/10.25919/5c36957c0af41
 ```
 
-## Paper
+### Paper
 ```
 D. Ward, P. Moghadam, and Nicolas Hudson, "Deep Leaf Segmentation Using Synthetic Data", British Machine Vision Conference (BMVC) Workshop on Computer Vision Problems in Plant Pheonotyping (CVPPP 2018)
 ```
-## Paper (bibtex)
+### Paper (bibtex)
 ```
-@article{ward2018deep,
+@inproceedings{ward2018deep,
   title={Deep leaf segmentation using synthetic data},
   author={Ward, Daniel and Moghadam, Peyman and Hudson, Nicolas},
-  journal={arXiv preprint arXiv:1807.10931},
+  booktitle={British Machine Vision Conference (BMVC) workshop on Computer Vision Problems in Plant Pheonotyping (CVPPP2018)},
+  pages={26},
   year={2018}
 }
 ```
 
-## Mask RCNN Framework (from the matterport readme)
+### Mask RCNN Framework (from the matterport readme)
 ```
 @misc{matterport_maskrcnn_2017,
   title={Mask R-CNN for object detection and instance segmentation on Keras and TensorFlow},
