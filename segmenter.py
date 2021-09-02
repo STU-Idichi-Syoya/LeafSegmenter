@@ -110,7 +110,8 @@ def mask_to_rgb(mask):
 
 def mask2save(mask,outpath:str):
     """
-    (H,W,N) ... N is number of objects
+    mask :(H,W,N) ... N is number of objects
+    outpathのディレクトリを生成し，その中に葉１枚のmaskを葉の枚数分入れる．
     """
     outpath= outpath if outpath.rfind(".")==-1 else outpath[:outpath.rfind(".")]
     os.makedirs(outpath,exist_ok=True)
@@ -159,8 +160,7 @@ def inference():
             # results = [{'class_ids', 'rois', 'scores', 'masks'}]
             results = inference_model.detect([image], verbose=args.verbose)
             # rgb_mask = mask_to_rgb(results[0]['masks'])
-            print('keys=',results[0].keys())
-            print('len=',len(results))
+            # マスクを保存
             mask2save(results[0]['masks'],out_path)
             # io.imsave(out_path, rgb_mask)
 
