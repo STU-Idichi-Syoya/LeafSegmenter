@@ -9,6 +9,7 @@ import argparse
 import os
 from glob import glob
 import numpy as np
+import cv2
 
 class TrainConfig(config.Config):
     NAME = 'cvppp'
@@ -95,6 +96,7 @@ def load_image(im_path):
 
 def mask_to_rgb(mask):
     """
+    (H,W,N) ... N is number of objects
     Converts a mask to RGB Format
     """
     colours = visualize.random_colors(mask.shape[2])
@@ -105,6 +107,21 @@ def mask_to_rgb(mask):
             rgb_mask[:, :, c] = np.where(mask[:, :, i] != 0, colours[i][c], rgb_mask[:, :, c])
 
     return rgb_mask
+
+def mask2save(mask,outpath:str):
+    """
+    (H,W,N) ... N is number of objects
+    """
+    outpath= outpath if outpath.rfind(".")==-1 else outpath[:outpath.rfind(".")]
+    os.makedirs(outpath,exist_ok=True)
+    for i in range(mask.shape[2]):
+
+        # print(mask[:,:,i].shape)
+        img=(mask[:,:,i]*255).astype('uint8')
+        # print(img.shape)
+        cv2.imwrite(os.path.join(outpath,str(i)+'.jpg'),img)
+    
+
 
 def inference():
     """
@@ -139,10 +156,13 @@ def inference():
             print("Saving prediction for", im_path, "at", out_path)
 
             image = load_image(im_path)
-
+            # results = [{'class_ids', 'rois', 'scores', 'masks'}]
             results = inference_model.detect([image], verbose=args.verbose)
-            rgb_mask = mask_to_rgb(results[0]['masks'])
-            io.imsave(out_path, rgb_mask)
+            # rgb_mask = mask_to_rgb(results[0]['masks'])
+            print('keys=',results[0].keys())
+            print('len=',len(results))
+            mask2save(results[0]['masks'],out_path)
+            # io.imsave(out_path, rgb_mask)
 
             count_file.write(os.path.basename(im_path) + ", " + str(results[0]['masks'].shape[2]) + "\n")
 
